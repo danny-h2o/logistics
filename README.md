@@ -1,6 +1,37 @@
-# Getting Started with Create React App
+# Lantern Logistics
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A single-player logistics management game built with React, Create React App, and Tailwind CSS. The current implementation establishes the domain data and interactive SVG road-network editor from `GAMEIMPLEMENTATIONPLAN.md` milestones 0–2.
+
+## Run locally
+
+```sh
+npm install
+npm start
+```
+
+## Verify
+
+```sh
+npm test -- --watchAll=false
+npm run build
+```
+
+## Current architecture
+
+- `src/gameData.js` contains balance values, cargo and vehicle definitions, the starting regional world, map-distance conversion, and world validation.
+- `src/App.js` renders the Tailwind-styled management screen and owns the editable world state and map interactions.
+- `src/App.css` contains only SVG map surface/interaction details; the rest of the GUI uses Tailwind utilities.
+- `src/App.test.js` and `src/gameData.test.js` cover map interactions and starter-world validation.
+
+## Implemented
+
+- Data-driven cargo and vehicle classes, a connected starter road network, fleet instances, and world reference validation.
+- SVG map selection, adding/renaming/retyping/moving locations, connecting roads, and safe removal of locations and roads.
+- Road distance estimates update from normalized map positions; duplicate and self-connections are rejected.
+
+## Next milestone
+
+Milestone 3 adds graph pathfinding and inspectable fastest/cheapest route estimates. Contracts, dispatch, and simulation follow in later milestones.
 
 ## Available Scripts
 
